@@ -22,7 +22,7 @@ style-job:
   tags:
     - style
   script:
-    - cd materials/linters/.clang-format src/cat/
+    - cp -r materials/linters/.clang-format src/cat/
     - cd src/cat/
     - clang-format --Werror -n *.c
     - clang-format --Werror -n *.h
