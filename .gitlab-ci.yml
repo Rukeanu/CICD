@@ -1,6 +1,5 @@
 stages:
   - build
-  - style
 
 build-job:
   stage: build
