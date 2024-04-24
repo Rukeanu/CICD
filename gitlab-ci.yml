@@ -1,0 +1,23 @@
+stages:
+  - build
+  - style
+
+build-job:
+  stage: build
+  tags:
+    - buildmake
+  script:
+    - make -C src/cat
+    - make -C src/grep
+  artifacts:
+    paths:
+      - src/cat/s21_cat
+      - src/grep/s21_grep
+    expire_in: 30 days
+
+# style-job:
+#   stage: style
+#   tags:
+#     styletest
+#   script:
+#     - cd -r materials/linters/.clang-format
