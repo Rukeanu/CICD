@@ -1,5 +1,6 @@
 stages:
   - build
+  - style
 
 build-job:
   stage: build
@@ -15,9 +16,17 @@ build-job:
     expire_in: 30 days
   only:
     - develop
-# style-job:
-#   stage: style
-#   tags:
-#     styletest
-#   script:
-#     - cd -r materials/linters/.clang-format
+
+style-job:
+  stage: style
+  tags:
+    style
+  script:
+    - cd -r materials/linters/.clang-format src/cat/
+    - cd src/cat/
+    - clang-format --Werror -n *.c
+    - clang-format --Werror -n *.h
+    - mv .clang-format ../grep/
+    - cd ../grep/
+    - clang-format --Werror -n *.c
+    - clang-format --Werror -n *.h
