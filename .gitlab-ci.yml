@@ -14,7 +14,8 @@ build-job:
       - src/cat/s21_cat
       - src/grep/s21_grep
     expire_in: 30 days
-
+  only:
+    - develop
 # style-job:
 #   stage: style
 #   tags:
