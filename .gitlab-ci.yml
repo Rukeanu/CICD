@@ -20,7 +20,7 @@ build-job:
 style-job:
   stage: style
   tags:
-    style
+    - style
   script:
     - cd -r materials/linters/.clang-format src/cat/
     - cd src/cat/
