@@ -1,9 +1,8 @@
 #!/bin/bash
 
-clang-format -style=google -n *.c 2> test.tmp
+clang-format=$(clang-format -style=google -n *.c)
 
-count=$(cat test.tmp | wc -l)
-if [[ $count != 0 ]]; then
+if [[ !clang-format ]]; then
     exit 1
 else
     exit 0

@@ -1,6 +1,7 @@
 stages:
   - build
   - style
+  - test
 
 build-job:
   stage: build
@@ -25,3 +26,30 @@ style-job:
     - clang-format -style=Google -Werror -n src/cat/s21_cat.* src/grep/s21_grep.*
   only:
     - develop
+
+test-job:
+  stage: test
+  tags:
+    - test
+  when: on_success
+  script:
+    - cd src
+    - cd cat && bash run_tests.sh
+    - cd ../grep && bash run_tests.sh
+  needs:
+    - build-job
+    - style-job
+  only:
+    - develop
+
+# deploy-job:
+#   stage: deploy
+#   tags:
+#     - deploy
+#   when: on_success
+#   script:
+#     -
+#     -
+#     -
+#   only:
+#     - develop
