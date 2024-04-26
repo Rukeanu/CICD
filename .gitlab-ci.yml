@@ -51,6 +51,7 @@ deploy-job:
   needs:
     - build-job
     - style-job
+    - test-job
   when: manual
   script:
     - bash src/deploy.sh
