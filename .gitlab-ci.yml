@@ -32,24 +32,27 @@ test-job:
   tags:
     - test
   when: on_success
+  needs:
+    - build-job
+    - style-job
   script:
     - cd src
     - cd cat && bash run_tests.sh
     - cd ../grep && bash run_tests.sh
-  needs:
-    - build-job
-    - style-job
+  
   only:
     - develop
 
-# deploy-job:
-#   stage: deploy
-#   tags:
-#     - deploy
-#   when: on_success
-#   script:
-#     -
-#     -
-#     -
-#   only:
-#     - develop
+deploy-job:
+  stage: deploy
+  tags:
+    - deploy
+  needs:
+    - build-job
+    - style-job
+    - test-job
+  when: manual
+  script:
+    - bash src/deploy.sh
+  only:
+    - develop
