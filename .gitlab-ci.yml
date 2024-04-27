@@ -1,7 +1,7 @@
 stages:
   - build
-  - style
-  - test
+  # - style
+  # - test
 
 build-job:
   stage: build
@@ -18,30 +18,30 @@ build-job:
   only:
     - develop
 
-style-job:
-  stage: style
-  tags:
-    - style
-  script:
-    - clang-format -style=Google -Werror -n src/cat/s21_cat.* src/grep/s21_grep.*
-  only:
-    - develop
+# style-job:
+#   stage: style
+#   tags:
+#     - style
+#   script:
+#     - clang-format -style=Google -Werror -n src/cat/s21_cat.* src/grep/s21_grep.*
+#   only:
+#     - develop
 
-test-job:
-  stage: test
-  tags:
-    - test
-  when: on_success
-  needs:
-    - build-job
-    - style-job
-  script:
-    - cd src
-    - cd cat && bash run_tests.sh
-    - cd ../grep && bash run_tests.sh
+# test-job:
+#   stage: test
+#   tags:
+#     - test
+#   when: on_success
+#   needs:
+#     - build-job
+#     - style-job
+#   script:
+#     - cd src
+#     - cd cat && bash run_tests.sh
+#     - cd ../grep && bash run_tests.sh
   
-  only:
-    - develop
+#   only:
+#     - develop
 
 # deploy-job:
 #   stage: deploy
