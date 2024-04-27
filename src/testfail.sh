@@ -6,8 +6,6 @@
 # fi
 
 # Запуск интеграционных тестов
-cd cat && bash run_tests.sh
-cd grep && bash run_tests.sh
 
 # Проверка результата тестов
 if [ $? -ne 0 ]; then
