@@ -8,10 +8,8 @@ build-job:
   tags:
     - build
   script:
-    - cd src/cat
-    - make
-    - cd ../grep
-    - make
+    - make -C src/cat
+    - make -C src/grep
   artifacts:
     paths:
       - src/cat/s21_cat
