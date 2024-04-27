@@ -1,12 +1,10 @@
 #!/bin/bash
 
-if [[ ${2} == "1" ]] && [[ $CI_JOB_STATUS == "success" ]]; then
-    exit 1
-fi
-
-# Запуск интеграционных тестов
-
-# Проверка результата тестов
-# if [ $? -ne 0 ]; then
-#   exit 1
+# if [[ ${2} == "1" ]] && [[ $CI_JOB_STATUS == "success" ]]; then
+#     exit 1
 # fi
+
+if [ $? -ne 0 ]; then
+  echo "FAIL"
+  exit 1
+fi

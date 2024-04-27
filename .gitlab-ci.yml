@@ -2,6 +2,7 @@ stages:
   - build
   - style
   - test
+  # - deploy
 
 build-job:
   stage: build
@@ -36,7 +37,6 @@ test-job:
     - cd src
     - cd cat && bash run_tests.sh
     - cd ../grep && bash run_tests.sh
-  
   only:
     - develop
 
