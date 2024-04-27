@@ -2,6 +2,7 @@ stages:
   - build
   - style
   - test
+  - deploy
 
 build-job:
   stage: build
@@ -32,9 +33,6 @@ test-job:
   tags:
     - test
   when: on_success
-  needs:
-    - build-job
-    - style-job
   script:
     - cd src
     - cd cat && bash run_tests.sh
