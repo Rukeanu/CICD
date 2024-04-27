@@ -35,7 +35,8 @@ test-job:
   when: on_success
   script:
     - cd src
-    - cd cat && bash run_tests.sh cd ..
+    - cd cat && bash run_tests.sh
+    - cd ..
     - cd grep && bash run_tests.sh
   only:
     - develop
