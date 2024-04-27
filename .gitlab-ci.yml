@@ -1,6 +1,6 @@
 stages:
   - build
-  # - style
+  - style
   # - test
 
 build-job:
@@ -18,14 +18,14 @@ build-job:
   only:
     - develop
 
-# style-job:
-#   stage: style
-#   tags:
-#     - style
-#   script:
-#     - clang-format -style=Google -Werror -n src/cat/s21_cat.* src/grep/s21_grep.*
-#   only:
-#     - develop
+style-job:
+  stage: style
+  tags:
+    - style
+  script:
+    - clang-format -style=Google -Werror -n src/cat/s21_cat.* src/grep/s21_grep.*
+  only:
+    - develop
 
 # test-job:
 #   stage: test
