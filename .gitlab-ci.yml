@@ -2,7 +2,6 @@ stages:
   - build
   - style
   - test
-  - deploy
 
 build-job:
   stage: build
