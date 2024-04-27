@@ -1,7 +1,7 @@
 stages:
   - build
   - style
-  # - test
+  - test
 
 build-job:
   stage: build
@@ -27,21 +27,21 @@ style-job:
   only:
     - develop
 
-# test-job:
-#   stage: test
-#   tags:
-#     - test
-#   when: on_success
-#   needs:
-#     - build-job
-#     - style-job
-#   script:
-#     - cd src
-#     - cd cat && bash run_tests.sh
-#     - cd ../grep && bash run_tests.sh
+test-job:
+  stage: test
+  tags:
+    - test
+  when: on_success
+  needs:
+    - build-job
+    - style-job
+  script:
+    - cd src
+    - cd cat && bash run_tests.sh
+    - cd ../grep && bash run_tests.sh
   
-#   only:
-#     - develop
+  only:
+    - develop
 
 # deploy-job:
 #   stage: deploy
