@@ -43,9 +43,10 @@ test-job:
   when: on_success
   script:
     - cd src
-    - cd cat && bash run_tests.sh
-    - cd ..
-    - cd grep && bash run_tests.sh
+    - bash testfail.sh
+    # - cd cat && bash run_tests.sh
+    # - cd ..
+    # - cd grep && bash run_tests.sh
   after_script:
     - cd src
     - chmod +x notifications.sh
