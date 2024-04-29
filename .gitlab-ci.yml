@@ -51,7 +51,7 @@ deploy-job:
     - test-job
   when: manual
   script:
-    - bash src/deploy.sh
+    - cd src
+    - bash deploy.sh
   only:
     - develop
-    
