@@ -36,22 +36,22 @@ style-job:
   only:
     - develop
 
-# test-job:
-#   stage: test
-#   tags:
-#     - test
-#   when: on_success
-#   script:
-#     - cd src
-#     - cd cat && bash run_tests.sh
-#     - cd ..
-#     - cd grep && bash run_tests.sh
-#   after_script:
-#     - cd src
-#     - chmod +x notifications.sh
-#     - bash notifications.sh
-#   only:
-#     - develop
+test-job:
+  stage: test
+  tags:
+    - test
+  when: on_success
+  script:
+    - cd src
+    - cd cat && bash run_tests.sh
+    - cd ..
+    - cd grep && bash run_tests.sh
+  after_script:
+    - cd src
+    - chmod +x notifications.sh
+    - bash notifications.sh
+  only:
+    - develop
 
 # deploy-job:
 #   stage: deploy

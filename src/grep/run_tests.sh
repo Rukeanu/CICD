@@ -36,9 +36,9 @@ result=$(diff a b)
 leaks -atExit -- ./a.out -v $PAT $TESTFILE
 
 if [ $? -eq 0 ]; then
-    printf " TEST #$i ${GREEN}PASSED${NC}\n"
+    printf " TEST #$i ${GREEN}FAILED${NC}\n"
 else
-    printf " TEST #$i ${RED}FAILED${NC}\n"
+    printf " TEST #$i ${RED}PASSED${NC}\n"
     printf "$result\n"
     ((failed++))
 fi
@@ -52,9 +52,9 @@ result=$(diff a b)
 leaks -atExit -- ./a.out -i $PAT $TESTFILE
 
 if [ $? -eq 0 ]; then
-    printf " TEST #$i ${GREEN}PASSED${NC}\n"
+    printf " TEST #$i ${GREEN}FAILED${NC}\n"
 else
-    printf " TEST #$i ${RED}FAILED${NC}\n"
+    printf " TEST #$i ${RED}PASSED${NC}\n"
     printf "$result\n"
     ((failed++))
 fi
@@ -68,9 +68,9 @@ result=$(diff a b)
 leaks -atExit -- ./a.out -s $PAT $TESTFILE
 
 if [ $? -eq 0 ]; then
-    printf " TEST #$i ${GREEN}PASSED${NC}\n"
+    printf " TEST #$i ${GREEN}FAILED${NC}\n"
 else
-    printf " TEST #$i ${RED}FAILED${NC}\n"
+    printf " TEST #$i ${RED}PASSED${NC}\n"
     printf "$result\n"
     ((failed++))
 fi
@@ -84,9 +84,9 @@ result=$(diff a b)
 leaks -atExit -- ./a.out -f $PATFILE $TESTFILE
 
 if [ $? -eq 0 ]; then
-    printf " TEST #$i ${GREEN}PASSED${NC}\n"
+    printf " TEST #$i ${GREEN}FAILED${NC}\n"
 else
-    printf " TEST #$i ${RED}FAILED${NC}\n"
+    printf " TEST #$i ${RED}PASSED${NC}\n"
     printf "$result\n"
     ((failed++))
 fi
@@ -101,9 +101,9 @@ result=$(diff a b)
 leaks -atExit -- ./a.out $FLAGS $PAT $TESTFILE
 
 if [ $? -eq 0 ]; then
-    printf " TEST #$i ${GREEN}PASSED${NC}\n"
+    printf " TEST #$i ${GREEN}FAILED${NC}\n"
 else
-    printf " TEST #$i ${RED}FAILED${NC}\n"
+    printf " TEST #$i ${RED}PASSED${NC}\n"
     printf "$result\n"
     ((failed++))
 fi
@@ -118,9 +118,9 @@ result=$(diff a b)
 leaks -atExit -- ./a.out $FLAGS $PAT $TESTFILE $TESTFILE $TESTFILE
 
 if [ $? -eq 0 ]; then
-    printf " TEST #$i ${GREEN}PASSED${NC}\n"
+    printf " TEST #$i ${GREEN}FAILED${NC}\n"
 else
-    printf " TEST #$i ${RED}FAILED${NC}\n"
+    printf " TEST #$i ${RED}PASSED${NC}\n"
     printf "$result\n"
     ((failed++))
 fi
@@ -136,9 +136,9 @@ leaks -atExit -- ./a.out $FLAGS $PAT $TESTFILE
 
 
 if [ $? -eq 0 ]; then
-    printf " TEST #$i ${GREEN}PASSED${NC}\n"
+    printf " TEST #$i ${GREEN}FAILED${NC}\n"
 else
-    printf " TEST #$i ${RED}FAILED${NC}\n"
+    printf " TEST #$i ${RED}PASSED${NC}\n"
     printf "$result\n"
     ((failed++))
 fi
@@ -153,9 +153,9 @@ result=$(diff a b)
 leaks -atExit -- ./a.out $FLAGS $PAT $TESTFILE
 
 if [ $? -eq 0 ]; then
-    printf " TEST #$i ${GREEN}PASSED${NC}\n"
+    printf " TEST #$i ${GREEN}FAILED${NC}\n"
 else
-    printf " TEST #$i ${RED}FAILED${NC}\n"
+    printf " TEST #$i ${RED}PASSED${NC}\n"
     printf "$result\n"
     ((failed++))
 fi
@@ -170,9 +170,9 @@ result=$(diff a b)
 leaks -atExit -- ./a.out $FLAGS $PAT $TESTFILE $TESTFILE
 
 if [ $? -eq 0 ]; then
-    printf " TEST #$i ${GREEN}PASSED${NC}\n"
+    printf " TEST #$i ${GREEN}FAILED${NC}\n"
 else
-    printf " TEST #$i ${RED}FAILED${NC}\n"
+    printf " TEST #$i ${RED}PASSED${NC}\n"
     printf "$result\n"
     ((failed++))
 fi
@@ -187,9 +187,9 @@ result=$(diff a b)
 leaks -atExit -- ./a.out $FLAGS $PAT $TESTFILE $TESTFILE
 
 if [ $? -eq 0 ]; then
-    printf " TEST #$i ${GREEN}PASSED${NC}\n"
+    printf " TEST #$i ${GREEN}FAILED${NC}\n"
 else
-    printf " TEST #$i ${RED}FAILED${NC}\n"
+    printf " TEST #$i ${RED}PASSED${NC}\n"
     printf "$result\n"
     ((failed++))
 fi
@@ -205,9 +205,9 @@ leaks -atExit -- ./a.out $FLAGS $PAT $TESTFILE $TESTFILE
 
 
 if [ $? -eq 0 ]; then
-    printf " TEST #$i ${GREEN}PASSED${NC}\n"
+    printf " TEST #$i ${GREEN}FAILED${NC}\n"
 else
-    printf " TEST #$i ${RED}FAILED${NC}\n"
+    printf " TEST #$i ${RED}PASSED${NC}\n"
     printf "$result\n"
     ((failed++))
 fi
@@ -222,9 +222,9 @@ result=$(diff a b)
 leaks -atExit -- ./a.out $FLAGS $PAT $TESTFILE $TESTFILE
 
 if [ $? -eq 0 ]; then
-    printf " TEST #$i ${GREEN}PASSED${NC}\n"
+    printf " TEST #$i ${GREEN}FAILED${NC}\n"
 else
-    printf " TEST #$i ${RED}FAILED${NC}\n"
+    printf " TEST #$i ${RED}PASSED${NC}\n"
     printf "$result\n"
     ((failed++))
 fi
@@ -239,9 +239,9 @@ result=$(diff a b)
 leaks -atExit -- ./a.out $FLAGS $PAT $TESTFILE $TESTFILE
 
 if [ $? -eq 0 ]; then
-    printf " TEST #$i ${GREEN}PASSED${NC}\n"
+    printf " TEST #$i ${GREEN}FAILED${NC}\n"
 else
-    printf " TEST #$i ${RED}FAILED${NC}\n"
+    printf " TEST #$i ${RED}PASSED${NC}\n"
     printf "$result\n"
     ((failed++))
 fi
@@ -256,9 +256,9 @@ result=$(diff a b)
 leaks -atExit -- ./a.out $FLAGS $PATFILE $TESTFILE $TESTFILE
 
 if [ $? -eq 0 ]; then
-    printf " TEST #$i ${GREEN}PASSED${NC}\n"
+    printf " TEST #$i ${GREEN}FAILED${NC}\n"
 else
-    printf " TEST #$i ${RED}FAILED${NC}\n"
+    printf " TEST #$i ${RED}PASSED${NC}\n"
     printf "$result\n"
     ((failed++))
 fi
@@ -273,9 +273,9 @@ result=$(diff a b)
 leaks -atExit -- ./a.out $FLAGS $PAT $TESTFILE $TESTFILE
 
 if [ $? -eq 0 ]; then
-    printf " TEST #$i ${GREEN}PASSED${NC}\n"
+    printf " TEST #$i ${GREEN}FAILED${NC}\n"
 else
-    printf " TEST #$i ${RED}FAILED${NC}\n"
+    printf " TEST #$i ${RED}PASSED${NC}\n"
     printf "$result\n"
     ((failed++))
 fi
@@ -291,9 +291,9 @@ result=$(diff a b)
 leaks -atExit -- ./a.out $FLAGS $PAT $TESTFILE $TESTFILE
 
 if [ $? -eq 0 ]; then
-    printf " TEST #$i ${GREEN}PASSED${NC}\n"
+    printf " TEST #$i ${GREEN}FAILED${NC}\n"
 else
-    printf " TEST #$i ${RED}FAILED${NC}\n"
+    printf " TEST #$i ${RED}PASSED${NC}\n"
     printf "$result\n"
     ((failed++))
 fi
@@ -307,9 +307,9 @@ result=$(diff a b)
 leaks -atExit -- ./a.out $FLAGS $PAT $TESTFILE $TESTFILE $TESTFILE $TESTFILE
 
 if [ $? -eq 0 ]; then
-    printf " TEST #$i ${GREEN}PASSED${NC}\n"
+    printf " TEST #$i ${GREEN}FAILED${NC}\n"
 else
-    printf " TEST #$i ${RED}FAILED${NC}\n"
+    printf " TEST #$i ${RED}PASSED${NC}\n"
     printf "$result\n"
     ((failed++))
 fi
