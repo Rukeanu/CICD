@@ -1,13 +1,9 @@
 #!/bin/bash
 
-REMOTE_USER="everettl"
-REMOTE_HOST="10.0.2.16"
-REMOTE_DIR="/usr/local/bin"
-LOCAL_DIR_1="./src/cat/s21_cat"
-LOCAL_DIR_2="./src/grep/s21_grep"
+scp cat/s21_cat cd@192.168.100.11:/usr/local/bin/
+scp grep/s21_grep cd@192.168.100.11:/usr/local/bin/
 
-scp $LOCAL_DIR_1 $REMOTE_USER@$REMOTE_HOST:$REMOTE_DIR
-scp $LOCAL_DIR_2 $REMOTE_USER@$REMOTE_HOST:$REMOTE_DIR
+ssh cd@192.168.100.15 ls -lah /usr/local/bin/
 
 #scp (secure copy) для копирования файлов из директории, указанной в LOCAL_DIR_1, \
 #на удаленную виртуальную машину в директорию, указанную в REMOTE_DIR.

@@ -2,7 +2,7 @@ stages:
   - build
   - style
   - test
-  # - deploy
+  - deploy
 
 build-job:
   stage: build
@@ -41,16 +41,17 @@ test-job:
   only:
     - develop
 
-# deploy-job:
-#   stage: deploy
-#   tags:
-#     - deploy
-#   needs:
-#     - build-job
-#     - style-job
-#     - test-job
-#   when: manual
-#   script:
-#     - bash src/deploy.sh
-#   only:
-#     - develop
+deploy-job:
+  stage: deploy
+  tags:
+    - deploy
+  needs:
+    - build-job
+    - style-job
+    - test-job
+  when: manual
+  script:
+    - bash src/deploy.sh
+  only:
+    - develop
+    
