@@ -16,6 +16,10 @@ build-job:
       - src/cat/s21_cat
       - src/grep/s21_grep
     expire_in: 30 days
+  after_script:
+    - cd src
+    - chmod +x notifications.sh
+    - bash notifications.sh
   only:
     - develop
 
@@ -38,6 +42,10 @@ test-job:
     - cd cat && bash run_tests.sh
     - cd ..
     - cd grep && bash run_tests.sh
+  after_script:
+    - cd src
+    - chmod +x notifications.sh
+    - bash notifications.sh
   only:
     - develop
 
@@ -53,5 +61,9 @@ deploy-job:
   script:
     - cd src
     - bash deploy.sh
+  after_script:
+    - cd src
+    - chmod +x notifications.sh
+    - bash notifications.sh
   only:
     - develop
