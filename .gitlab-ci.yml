@@ -29,6 +29,10 @@ style-job:
     - style
   script:
     - clang-format -style=Google -Werror -n src/cat/s21_cat.* src/grep/s21_grep.*
+  after_script:
+    - cd src
+    - chmod +x notifications.sh
+    - bash notifications.sh  
   only:
     - develop
 
